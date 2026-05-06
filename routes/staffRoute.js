@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const bcrypt = require('bcruptjs');
+const bcrypt = require('bcryptjs');
 
 //Fetch all staffs
 router.get('/fetch-all-staffs', async (req, res) => {
@@ -85,3 +85,5 @@ router.put('/edit-staff/:id', async (req, res) => {
     }
 
 }); 
+
+module.exports = router;

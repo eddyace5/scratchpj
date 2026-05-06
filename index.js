@@ -9,7 +9,7 @@ dotenv.config();
 //Connect to database
 const connectDB = async () => {
     try {
-        const conn = await mongoose.connect(procss.env.MONGOOB_URI);
+        const conn = await mongoose.connect(process.env.MONGODB_URI);
         console.log(`MongoDB Connected: ${conn.connection.host}`);
     } catch (err) {
         console.error(`Error: ${err.message}`);
@@ -23,9 +23,9 @@ app.use(express.json()); //Body parser
 app.use(cors()); //Enable CORS
 
 // Mount routers
-app.use('/api/auth', require('./routes/authRoutes'));
-app.use('api/staffs', require('./rotes/staffRoutes'));
-app.use('/api/products', require('./routes/productRoutes'));
+// app.use('/api/auth', require('./routes/authRoutes'));
+app.use('api/staffs', require('./routes/staffRoute'));
+// app.use('/api/products', require('./routes/productRoutes'));
 
 
 //Basic error handler
